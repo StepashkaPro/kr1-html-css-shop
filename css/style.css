@@ -198,6 +198,17 @@ a:focus-visible {
   background-color: var(--color-primary);
 }
 
+.advanteges-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-md) 0 0;
+  padding: 0 ;
+  margin:  var(--space-md);
+  list-style: none;
+}
+
 
 /* ===============================
    4. Компоненты страницы
@@ -212,12 +223,12 @@ a:focus-visible {
   border-radius: var(--radius-lg);
 }
 
-.section {
+.selection {
   max-width: var(--container-width);
   margin: 0 auto var(--space-xl);
 }
 
-.section h2 {
+.selection h2 {
   margin-top: 0;
 }
 
