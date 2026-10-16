@@ -36,7 +36,7 @@
             <a class="button" href="#popular">Перейти к товарам</a>
         </section>
 
-        <section class="selection" id="advantages">
+        <section class="section" id="advantages">
             <h2>Преимущества</h2>
             
             <ul class="advantages-list">
@@ -82,7 +82,7 @@
 
 
         <aside class="aside-info">
-            <h2>Инфйормация для студентов</h2>
+            <h2>Информация для студентов</h2>
             <p>
                 На следующих практических занятиях этот проект будет расширяться:
                 появятся формы, модальное окно, дополнительные страницы, Flex/Grid,
@@ -98,23 +98,24 @@
 
     <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
         <h2 id="order-dialog-title">Оформление заявки</h2>
-
+        
         <form class="order-form" id="order-form" action="#" method="post" novalidate>
             <input id="selected-product" name="selected-product" type="hidden">
-
+            
             <div class="form-field">
                 <label for="order-name">Имя</label>
                 <input
                     id="order-name"
                     name="name"
                     type="text"
-                    placeholder="Ввкдите ваше имя"
+                    placeholder="Введите ваше имя"
                     minlength="2"
                     autocomplete="given-name"
                     required
                 >
             </div>
-
+            
+            
             <div class="form-field">
                 <label for="order-email">E-mail</label>
                 <input
@@ -126,7 +127,8 @@
                     required
                 >
             </div>
-
+            
+            
             <div class="form-field">
                 <label for="order-phone">Телефон</label>
                 <input
@@ -140,7 +142,8 @@
                 >
                 <small>Формат: +7 (900) 000-00-00</small>
             </div>
-
+            
+            
             <div class="form-field">
                 <label for="order-date">Дата связи</label>
                 <input
@@ -149,7 +152,7 @@
                     type="date"
                 >
             </div>
-
+            
             <div class="form-field">
                 <label for="order-topic">Тема заявки</label>
                 <select id="order-topic" name="topic" required>
@@ -158,8 +161,8 @@
                     <option value="consultation">Консультация</option>
                     <option value="delivery">Доставка</option>
                 </select>
-                </div>
-
+            </div>     
+            
             <div class="form-field">
                 <label for="order-comment">Комментарий</label>
                 <textarea
@@ -168,8 +171,8 @@
                     rows="4"
                     placeholder="Укажите дополнительную информацию"
                 ></textarea>
-            </div>
-
+            </div>        
+            
             <div class="form-field form-field--checkbox">
                 <label>
                     <input
@@ -181,7 +184,7 @@
                     Я согласен на обработку данных
                 </label>
             </div>
-
+            
             <div class="form-actions">
                 <button type="button" id="close-order-dialog">Закрыть</button>
                 <button type="submit">Отправить заявку</button>
@@ -189,6 +192,43 @@
 
         </form>
     </dialog>
+
+    <!-- <form class="login" id="login-dialog" aria-labelledby="login-dialog-title">
+        <h2 id="login-dialog-title">Sign in</h2>
+        <form class="login-form" id="login-form" action="#" method="post" novalidate>
+            <div class="form-field">
+                <input 
+                id="username"
+                name="username"
+                type="text"
+                placeholder="Введите ваше имя"
+                minlength="2"
+                required
+                >
+            </div>
+
+            <div class="form-field">
+                <input 
+                id="password"
+                name="password"
+                type="text"
+                placeholder="Введите пароль"
+                minlength="4"
+                required
+                >
+            </div>
+
+            <div class="remember">
+                <label for=""><input type="checkbox">Запомнить</label>
+                <a href="#">Забыл пароль</a>
+            </div>
+
+            <button type="submit" class="button">Sign in</button>
+
+            <div class="Sign-up"></div>
+            
+        </form>
+    </dialog> -->
 
     <p class="success-message" id="success-message" hidden>
         Форма успешно отправлена!
