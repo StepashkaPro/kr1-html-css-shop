@@ -3,18 +3,20 @@
    =============================== */
 :root {
   /* Основные цвета проекта */
-  --color-bg: #ffffff;
-  --color-text: #222222;
+  --color-bg: #121212;
+  --color-text-title: #F5F5F5;
+  --color-text:#B0B0B0;
   --color-muted: #666666;
-  --color-primary: #0057b8;
-  --color-primary-dark: #003f86;
+  --color-primary: #D96B27;
+  --color-primary-dark: #c25e00;
   --color-border: #dddddd;
-  --color-surface: #f7f7f7;
-  --color-surface-accent: #eef5ff;
+  --color-surface: #1A1A1A;
+  --color-surface-accent: #1A1A1A;
   --color-danger: #b00020;
   --color-success: #168a2f;
   --color-success-bg: #eefaf0;
   --color-white: #ffffff;
+  --color-black: #121212;
 
   /* Отступы */
   --space-xs: 4px;
@@ -45,7 +47,7 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   line-height: 1.5;
-  color: var(--color-text);
+  color: var(--color-text-title);
   background-color: var(--color-bg);
 }
 
@@ -198,18 +200,6 @@ a:focus-visible {
   background-color: var(--color-primary);
 }
 
-.advanteges-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: var(--space-md) 0 0;
-  padding: 0 ;
-  margin:  var(--space-md);
-  list-style: none;
-}
-
-
 /* ===============================
    4. Компоненты страницы
    =============================== */
@@ -223,12 +213,16 @@ a:focus-visible {
   border-radius: var(--radius-lg);
 }
 
-.selection {
+.hero p {
+  color: var(--color-text)
+}
+
+.section {
   max-width: var(--container-width);
   margin: 0 auto var(--space-xl);
 }
 
-.selection h2 {
+.section h2 {
   margin-top: 0;
 }
 
@@ -240,7 +234,7 @@ a:focus-visible {
   padding: var(--space-md);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  background-color: var(--color-bg);
+  background-color: var(--color-surface);
 }
 
 .product-card .button {
@@ -259,7 +253,7 @@ a:focus-visible {
 .button {
   display: inline-block;
   padding: var(--space-sm) var(--space-md);
-  color: var(--color-white);
+  color: var(--color-black);
   background-color: var(--color-primary);
   text-decoration: none;
   border: none;
@@ -269,6 +263,7 @@ a:focus-visible {
 
 .button:hover {
   background-color: var(--color-primary-dark);
+  color: var(--color-black);
 }
 
 .button:focus-visible {
@@ -287,7 +282,7 @@ a:focus-visible {
   margin: 0 auto var(--space-xl);
   padding: var(--space-md);
   border-left: 4px solid var(--color-primary);
-  background-color: var(--color-surface);
+  background-color: var(--color-bg);
 }
 
 
@@ -312,14 +307,20 @@ a:focus-visible {
   padding: var(--space-lg);
   border: none;
   border-radius: var(--radius-lg);
+  background-color: var(--color-bg);
+  color: var(--color-text-title);
 }
 
 .order-dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.order-dialog h2 {
+  border-bottom: 3px solid var(--color-primary);
+}
+
 .form-field {
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
 }
 
 .form-field label {
@@ -327,12 +328,20 @@ a:focus-visible {
   margin-bottom: var(--space-xs);
 }
 
+.form-field input,
+.form-field select,
+.form-field textarea {
+  border-radius: var(--radius-md);
+  padding: 5px var(--space-md);
+}
+
 .form-field input:hover,
 .form-field select:hover,
 .form-field textarea:hover {
-  border-color: var(--color-primary);
+  transform-origin: left bottom;
+  transform: scale(1.1);
+  transition: 0.5s ease;
 }
-
 
 .form-field input[type="checkbox"] {
   width: auto;
@@ -350,6 +359,22 @@ a:focus-visible {
 .form-actions button:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 3px;
+  transform-origin: left bottom;
+  transform: scale(1.1);
+  transition: 0.5s ease;
+}
+
+.form-actions button {
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-primary);
+  color: var(--color-black);
+  border-radius: var(--radius-sm);
+  border: none;
+}
+
+.form-actions button:hover{
+  background-color: var(--color-primary-dark);
+  color: var(--color-black);
 }
 
 [aria-invalid="true"] {
