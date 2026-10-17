@@ -29,46 +29,15 @@ closeDialogButton.addEventListener('click', () => {
   orderDialog.close();
 });
 
-// Получаем форму заявки.
-const orderForm = document.getElementById('order-form');
 
-// Получаем сообщение об успешной отправке.
-const successMessage = document.getElementById('success-message');
+const showDialog = document.querySelector('.login__button');
+const dialogBox = document.querySelector('.login-dialog');
+const closeDialog = document.querySelector('.close-login-dialog');
 
-// Обрабатываем отправку формы.
-orderForm.addEventListener('submit', (event) => {
-  // Отменяем стандартную отправку формы,
-  // потому что backend пока не подключён.
-  event.preventDefault();
+showDialog.addEventListener('click', () => {
+  dialogBox.showModal();
+})
 
-  // Сбрасываем предыдущие признаки ошибок.
-  const formElements = Array.from(orderForm.elements);
-
-  formElements.forEach((element) => {
-    if (element.willValidate) {
-      element.removeAttribute('aria-invalid');
-    }
-  });
-
-  // Проверяем встроенные HTML-ограничения формы.
-  if (!orderForm.checkValidity()) {
-    formElements.forEach((element) => {
-      if (element.willValidate && !element.checkValidity()) {
-        element.setAttribute('aria-invalid', 'true');
-      }
-    });
-
-    // Показываем стандартные сообщения браузера.
-    orderForm.reportValidity();
-    return;
-  }
-
-  // Показываем сообщение об успешной отправке.
-  successMessage.hidden = false;
-
-  // Очищаем форму.
-  orderForm.reset();
-
-  // Закрываем модальное окно.
-  orderDialog.close();
-});
+closeDialog.addEventListener('click', () => {
+  dialogBox.close();
+})
