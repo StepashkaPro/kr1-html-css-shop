@@ -1,14 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital@0;1&display=swap');
+
 /* ===============================
    1. Переменные проекта
    =============================== */
 :root {
   /* Основные цвета проекта */
   --color-bg: #121212;
+  --color-bg-light: #242424;
   --color-text-title: #F5F5F5;
   --color-text:#B0B0B0;
   --color-muted: #666666;
-  --color-primary: #D96B27;
-  --color-primary-dark: #c25e00;
+  --color-primary: #ff453a;
+  --color-primary-dark: #e86f68;
   --color-border: #dddddd;
   --color-surface: #1A1A1A;
   --color-surface-accent: #1A1A1A;
@@ -31,7 +34,7 @@
   --radius-lg: 12px;
 
   /* Размеры */
-  --container-width: 1100px;
+  --container-width: 85%;
 
 }
 
@@ -42,6 +45,7 @@
 
 * {
   box-sizing: border-box;
+  font-family: "Montseratt", sans-serif;
 }
 
 body {
@@ -82,7 +86,13 @@ html {
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   gap: var(--space-lg);
 }
 
@@ -177,29 +187,30 @@ a:focus-visible {
 
 }
 
-.site-header button {
-  position: absolute; /* Вырываем кнопку из потока */
-  top: 0;             ; /* Прижимаем к верхнему краю */
+.site-header .login__button {
+  position: absolute; 
   right: 0;
   display: inline-block;
   padding: var(--space-sm) var(--space-md);
-  color: var(--color-black);
-  background-color: var(--color-primary);
+  color: var(--color-white);
+  background: transparent;
   text-decoration: none;
   border: none;
-  border-radius: var(--radius-sm);
   cursor: pointer;
+}
+
+.login__button i {
+  font-size: 20px;
+}
+
+.login__button p {
+  margin-top: 0;
 }
 
 .sile-logo {
     font-weight: bold;
     text-decoration: none;
     color: #222222;
-}
-
-.sigh-in__button {
-  margin-top: auto;
-  align-self: flex-start;
 }
 
 .site-nav__list {
@@ -242,7 +253,7 @@ a:focus-visible {
 }
 
 .bg-image {
-  background-image: url('images/Background.png');
+  background-image: url('images/backgrounds/Background.png');
   background-size: cover;
   position: absolute;
   top: 0;
@@ -268,22 +279,107 @@ a:focus-visible {
 
 .section h2 {
   margin-top: 0;
+  margin-bottom: 50px;
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: var(--space-sm);
+  margin-bottom: 0;
+  padding: var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ;
+}
+
+.category-card h3 {
+  position: absolute;
+  text-align: center;
+  bottom: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  bottom: 0;
+}
+
+.category-card img {
+ max-width: 70%;
+ max-height: 70%;
+ display: block;
+ padding-bottom: 30px;
+}
+
+.category-card:hover {
+  border-color: var(--color-primary);
+  transform: translate(0, -15px);
+  box-shadow: 0 0 10px 5px rgba(255, 69, 58, 0.5);
 }
 
 .product-card {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: var(--space-sm);
   margin-bottom: 0;
-  padding: var(--space-md);
+  padding: var(--space-lg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   background-color: var(--color-surface);
+  transition: transform 0.5s ;
+}
+
+.product-card:hover {
+  border-color: var(--color-primary);
+  transform: translate(0, -10px);
+  box-shadow: 0 0 20px rgba(255, 69, 58, 0.5);
+}
+
+.product-card img {
+  max-width: 70%;
+  max-height: 70%;
+}
+
+.pr-features {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--space-sm);
+  width: 100%;
+}
+
+.pr-features__item {
+  display: flex;
+  background-color: var(--color-bg-light);
+  border-radius: 10px;
+}
+
+.pr-features__content {
+  flex: 1;
+  padding: var(--space-sm);
+  text-align: left;
+  width: 80%;
+}
+
+.pr-features__name {
+  background: transparent;
+  color: #8f90a6;
+  font-size: 14px;
+}
+
+.pr-features__value {
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .product-card .button {
   margin-top: auto;
+  width: 100%;
   align-self: flex-start;
+  border-radius: var(--radius-md);
 }
 
 .product-card:hover {
@@ -334,12 +430,19 @@ a:focus-visible {
    5. Форма и модальное окно
    =============================== */
 
-
-.order-dialog {
-  width: min(100% - 32px, 560px);
-  padding: 24px;
+.close-order-dialog {
+  position: absolute; 
+  right: 20px;
+  display: inline-block;
+  color: var(--color-white);
+  background: transparent;
+  text-decoration: none;
   border: none;
-  border-radius: 12px;
+  cursor: pointer;
+}
+
+.close-order-dialog i {
+  font-size: 20px;
 }
 
 .order-dialog::backdrop {
@@ -349,9 +452,11 @@ a:focus-visible {
 .order-dialog {
   width: min(100% - 32px, 560px);
   padding: var(--space-lg);
-  border: none;
   border-radius: var(--radius-lg);
-  background-color: var(--color-bg);
+  background: transparent;
+  border: 1px solid var(--color-primary);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   color: var(--color-text-title);
 }
 
@@ -360,11 +465,11 @@ a:focus-visible {
 }
 
 .order-dialog h2 {
-  border-bottom: 3px solid var(--color-primary);
+  text-align: center;
 }
 
 .form-field {
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-md);
 }
 
 .form-field label {
@@ -433,22 +538,98 @@ a:focus-visible {
   background-color: var(--color-success-bg);
 }
 
-.login-dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
 .login-dialog {
-  width: 30%;
+  width: 25%;
   padding: var(--space-lg);
   border: none;
   border-radius: var(--radius-lg);
-  background-color: var(--color-bg);
+  background: transparent;
+  border: 1px solid var(--color-primary);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   color: var(--color-text-title);
 }
 
 .login-dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+.close-login-dialog {
+  position: absolute; 
+  right: 20px;
+  display: inline-block;
+  color: var(--color-white);
+  background: transparent;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.close-login-dialog i {
+  font-size: 20px;
+}
+
+.login-dialog h2 {
+  text-align: center;
+}
+
+.login-field {
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+  position: relative;
+}
+
+.login-field input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  border: 1px solid var(--color-primary);
+  border-radius: 40px;
+  font-size: 14px;
+  color: var(--color-white);
+  padding: var(--space-md) var(--space-lg) var(--space-md) var(--space-md);
+}
+
+.login-field input::placeholder {
+  color: var(--color-white)
+}
+
+.login-field i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+}
+
+.sing-in {
+  width: 100%;
+  height: 40px;
+  background-color: var(--color-primary);
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  color: var(--color-black);
+  font-weight: 600;
+}
+
+.login-dialog .register-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.register-link a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+
+
+
 
 
 

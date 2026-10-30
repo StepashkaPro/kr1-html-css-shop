@@ -5,6 +5,7 @@
         <meta name = "viewport" content="width=device-width, initial-scale=1.0">
         <title>Каталог товаров</title>
         <link rel="stylesheet" href="css/style.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <script src="js/main.js" defer></script>
     </head>
 
@@ -12,7 +13,10 @@
     <header>
         <div class="site-header">
             <a class="site-logo" href="index.htm">ShopProject</a>
-            <button class="login__button" type="button">Sing in</button>
+            <button class="login__button" type="button">
+                <i class='bx bx-user'></i>
+                <p>sing-in</p>
+            </button>
             <nav class="site-nav" aria-label="Основная навигация">
                 <ul class="site-nav__list">
                     <li><a href="index.html">Главная</a></li>
@@ -50,39 +54,226 @@
                 <li>Подготовка к разработке многостраничного сайта.</li>
             </ul>
         </section>
+
+        <section class="section" id="categories">
+            <h2>Популярные категории</h2>
+
+            <div class="categories-grid">
+                <article class="category-card">
+                    <img src="css/images/categories-icons/PC.png" alt="">
+                    <h3>готовые сборки</h3>
+                </article>
+            
+                <article class="category-card">
+                    <img src="css/images/categories-icons/vga.png" alt="">
+                    <h3>видеокарты</h3>
+                </article>
+            
+                <article class="category-card">
+                    <img src="css/images/categories-icons/Pro.png" alt="">
+                    <h3>процессоры</h3>
+                </article>
+            
+                <article class="category-card">
+                    <img src="css/images/categories-icons/mp.png" alt="">
+                    <h3>материнские<br>платы</h3>
+                </article>
+            
+                <article class="category-card">
+                    <img src="css/images/categories-icons/om.png" alt="">
+                    <h3>оперативная <br> память</h3>
+                </article>
+            
+                <article class="category-card">
+                    <img src="css/images/categories-icons/ssd.png" alt="">
+                    <h3>SSD</h3>
+                </article>
+            </div>
+
+            <div class=""></div>
+        </section>
         
         <section class="section" id="popular">
             <h2>Популярные товары</h2>
 
             <div class="products-grid">
                 <article class="product-card">
-                    <h3>Товар 1</h3>
-                    <p>Краткое описание учебного товара.</p>
-                    <p>Цена: 1000 руб.</p>
+                    <img src="css/images/product-icons/BrandStarG8122886.png" alt="">
+                    <h3>Компьютер BrandStar Игровой G8122886</h3>
+                    <div class="pr-features">
+                        <div class="pr-features__item">
+                            <div class="pr-features__content">
+                                <div class="pr-features__name">Процессор</div>
+                                <div class="pr-features__value">Intel Core i5-13400F</div>
+                            </div>
+                        </div>
+                        <div class="pr-features__item">
+                            <div class="pr-features__content">
+                                <div class="pr-features__name">Видеокарта</div>
+                                <div class="pr-features__value">RTX 5060 8GB</div>
+                            </div>
+                        </div>
+                        <div class="pr-features__item">
+                            <div class="pr-features__content">
+                                <div class="pr-features__name">Объём оперативной памяти</div>
+                                <div class="pr-features__value">64GB DDR5</div>
+                            </div>
+                        </div>
+                        <div class="pr-features__item">
+                            <div class="pr-features__content">
+                                <div class="pr-features__name">объём SSD</div>
+                                <div class="pr-features__value">2 TB</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>183 960<i class='bx bx-ruble'></i></p>
                     <button class="button product-card__button" type="button" data-product="Товар 1">
                         Заказать
                     </button>
                 </article>
 
                 <article class="product-card">
-                    <h3>Товар 2</h3>
-                    <p>Краткое описание учебного товара.</p>
-                    <p>Цена: 1500 руб.</p>
+                    <img src="css/images/product-icons/BrandStarG8123035.png" alt="">
+                    <h3>Компьютер BrandStar Игровой G8123035</h3>
+                    <div class="pr-features">
+                        <div class="pr-features__item">
+                            <div class="pr-features__icon">
+                                <!-- <img src="css/images/product-icons/cpu.svg" alt="protsessor"> -->
+                            </div>
+                            <div class="pr-features__content">
+                                <div class="pr-features__name">Процессор</div>
+                                <div class="pr-features__value">Intel Core i5-14400F</div>
+                            </div>
+                        </div>
+                        <div class="pr-features__item">
+                            <div class="pr-features__icon">
+                                <!-- <img src="css/images/product-icons/cpu.svg" alt="protsessor"> -->
+                            </div>
+                            <div class="pr-features__content">
+                                <div class="pr-features__name">Видеокарта</div>
+                                <div class="pr-features__value">RTX 5060 Ti 16GB</div>
+                            </div>
+                        </div>
+                        <div class="pr-features__item">
+                            <div class="pr-features__icon">
+                                <!-- <img src="css/images/product-icons/cpu.svg" alt="protsessor"> -->
+                            </div>
+                            <div class="pr-features__content">
+                                <div class="pr-features__name">Объём оперативной памяти</div>
+                                <div class="pr-features__value">16GB DDR5</div>
+                            </div>
+                        </div>
+                        <div class="pr-features__item">
+                            <div class="pr-features__icon">
+                                <!-- <img src="css/images/product-icons/cpu.svg" alt="protsessor"> -->
+                            </div>
+                            <div class="pr-features__content">
+                                <div class="pr-features__name">объём SSD</div>
+                                <div class="pr-features__value">1 TB</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>145 450<i class='bx bx-ruble'></i></p>
                     <button class="button product-card__button" type="button" data-product="Товар 2">
                         Заказать
                     </button>
                 </article>
 
                 <article class="product-card">
-                    <h3>Товар 3</h3>
-                    <p>Краткое описание учебного товара.</p>
-                    <p>Цена: 2000 руб.</p>
+                    <img src="css/images/product-icons/BrandStarG8185241.png" alt="">
+                    <h3>Компьютер BrandStar Игровой G8185241</h3>
+                    <div class="pr-features">
+                        <div class="pr-features__item">
+                            <div class="pr-features__icon">
+                                <!-- <img src="css/images/product-icons/cpu.svg" alt="protsessor"> -->
+                            </div>
+                            <div class="pr-features__content">
+                                <div class="pr-features__name">Процессор</div>
+                                <div class="pr-features__value">Intel Core i5-13400F</div>
+                            </div>
+                        </div>
+                        <div class="pr-features__item">
+                            <div class="pr-features__icon">
+                                <!-- <img src="css/images/product-icons/cpu.svg" alt="protsessor"> -->
+                            </div>
+                            <div class="pr-features__content">
+                                <div class="pr-features__name">Видеокарта</div>
+                                <div class="pr-features__value">RTX 5060 Ti 16GB</div>
+                            </div>
+                        </div>
+                        <div class="pr-features__item">
+                            <div class="pr-features__icon">
+                                <!-- <img src="css/images/product-icons/cpu.svg" alt="protsessor"> -->
+                            </div>
+                            <div class="pr-features__content">
+                                <div class="pr-features__name">Объём оперативной памяти</div>
+                                <div class="pr-features__value">16GB DDR5</div>
+                            </div>
+                        </div>
+                        <div class="pr-features__item">
+                            <div class="pr-features__icon">
+                                <!-- <img src="css/images/product-icons/cpu.svg" alt="protsessor"> -->
+                            </div>
+                            <div class="pr-features__content">
+                                <div class="pr-features__name">объём SSD</div>
+                                <div class="pr-features__value">1 TB</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>164 190<i class='bx bx-ruble'></i></p>
+                    <button class="button product-card__button" type="button" data-product="Товар 3">
+                        Заказать
+                    </button>
+                </article>
+
+                <article class="product-card">
+                    <img src="css/images/product-icons/BrandStarG8122770.png" alt="">
+                    <h3>Компьютер BrandStar Игровой G8122770</h3>
+                    <div class="pr-features">
+                        <div class="pr-features__item">
+                            <div class="pr-features__icon">
+                                <!-- <img src="css/images/product-icons/cpu.svg" alt="protsessor"> -->
+                            </div>
+                            <div class="pr-features__content">
+                                <div class="pr-features__name">Процессор</div>
+                                <div class="pr-features__value">Intel Core i5-13400F</div>
+                            </div>
+                        </div>
+                        <div class="pr-features__item">
+                            <div class="pr-features__icon">
+                                <!-- <img src="css/images/product-icons/cpu.svg" alt="protsessor"> -->
+                            </div>
+                            <div class="pr-features__content">
+                                <div class="pr-features__name">Видеокарта</div>
+                                <div class="pr-features__value">RTX 5060 8GB</div>
+                            </div>
+                        </div>
+                        <div class="pr-features__item">
+                            <div class="pr-features__icon">
+                                <!-- <img src="css/images/product-icons/cpu.svg" alt="protsessor"> -->
+                            </div>
+                            <div class="pr-features__content">
+                                <div class="pr-features__name">Объём оперативной памяти</div>
+                                <div class="pr-features__value">64GB DDR5</div>
+                            </div>
+                        </div>
+                        <div class="pr-features__item">
+                            <div class="pr-features__icon">
+                                <!-- <img src="css/images/product-icons/cpu.svg" alt="protsessor"> -->
+                            </div>
+                            <div class="pr-features__content">
+                                <div class="pr-features__name">объём SSD</div>
+                                <div class="pr-features__value">1 TB</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>187 430<i class='bx bx-ruble'></i></p>
                     <button class="button product-card__button" type="button" data-product="Товар 3">
                         Заказать
                     </button>
                 </article>
             </div>
-            </section>
+        </section>
 
 
         <aside class="aside-info">
@@ -101,6 +292,8 @@
     </footer>
 
     <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+        
+        <button type="button" class="close-order-dialog" id="close-order-dialog"> <i class="bx bx-x"></i> </button>
         <h2 id="order-dialog-title">Оформление заявки</h2>
         
         <form class="order-form" id="order-form" action="#" method="post" novalidate>
@@ -147,7 +340,6 @@
                 <small>Формат: +7 (900) 000-00-00</small>
             </div>
             
-            
             <div class="form-field">
                 <label for="order-date">Дата связи</label>
                 <input
@@ -189,18 +381,17 @@
                 </label>
             </div>
             
-            <div class="form-actions">
-                <button type="button" id="close-order-dialog">Закрыть</button>
-                <button type="submit">Отправить заявку</button>
-            </div>
+            <button type="submit">Отправить заявку</button>
 
         </form>
     </dialog>
     
     <dialog class="login-dialog" id="login-dialog" aria-labelledby="login-dialog-title">
+        
+        <button type="button" class="close-login-dialog"> <i class="bx bx-x"></i> </button>
         <h2 id="login-dialog-title">Sign in</h2>
         <form class="login-form" id="login-form" action="#" method="post" novalidate>
-            <div class="form-field">
+            <div class="login-field">
                 <input 
                 id="username"
                 name="username"
@@ -209,9 +400,10 @@
                 minlength="2"
                 required
                 >
+                <i class='bx bx-user'></i>
             </div>
 
-            <div class="form-field">
+            <div class="login-field">
                 <input 
                 id="password"
                 name="password"
@@ -220,9 +412,10 @@
                 minlength="4"
                 required
                 >
+                <i class='bx bxs-lock-alt'></i>
             </div>
 
-             <div class="form-field form-field--checkbox">
+            <div class="form-field form-field--checkbox">
                 <label>
                     <input
                     id="remember"
@@ -234,11 +427,11 @@
                 </label>
             </div>
 
-            <div class="form-actions">
-                <button type="button">Sigh in</button>
-                <button type="button" class="close-login-dialog">Close</button>
-            </div>
+            <button type="button" class="sing-in">Sigh in</button>
             
+            <div class="register-link"> 
+                <a href="#">Создать аккаунт</a>
+            </div>
         </form>
     </dialog>
 
